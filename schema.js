@@ -3,8 +3,9 @@ const {
     GraphQLInt, 
     GraphQLString,
     GraphQLList, 
-    GraphQLBoolean 
-} = require('express-graphql');
+    GraphQLBoolean,
+    GraphQLSchema
+} = require('graphql');
 
 const axios = require('axios');
 
@@ -39,11 +40,15 @@ const RootQuery = new GraphQLObjectType({
     fields: {
         launches: {
             type: new GraphQLList(LaunchSchema),
-            resolve(parent, argument) {
-                return axios.get('/')
+            async resolve(parent, argument) {
+                const launches = await axios.get('https://api.spacexdata.com/v3/launches');
+                return launches.data
             }
         }
     }
-})
+});
 
+module.exports = new GraphQLSchema({
+    query: RootQuery
+})
 
