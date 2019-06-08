@@ -40,12 +40,23 @@ const RootQuery = new GraphQLObjectType({
     fields: {
         launches: {
             type: new GraphQLList(LaunchSchema),
-            async resolve(parent, argument) {
+            async reslove(parent, args){
                 const launches = await axios.get('https://api.spacexdata.com/v3/launches');
                 return launches.data
             }
+        },
+        launch: {
+            type: LaunchSchema,
+            args: {
+                flight_number: { type: GraphQLInt }
+            },
+            async resolve(parent, args){
+                const launch = await axios.get(`https://api.spacexdata.com/v3/launches/${args.flight_number}`)
+                return launch.data
+            }
         }
     }
+    
 });
 
 module.exports = new GraphQLSchema({
