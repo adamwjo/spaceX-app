@@ -40,16 +40,16 @@ export class Launch extends Component {
 
             return (
               <div>
-                <h1 className="display-4 my-3 text-secondary">Mission Name:</h1>
+                <h1 className="display-4 my-3 text-warning">Mission Name:</h1>
                 <h3 className="display-4 my-3">
                   <span className="text-light"> {mission_name}</span>
                 </h3>
-                <h4 className="mb-3">Launch Details</h4>
+                <h4 className="mb-3 text-light">Launch Details</h4>
                 <ul className="list-group">
-                  <li className="list-group-item">
+                  <li className="list-group-item text-dark">
                     Flight Number: {flight_number}
                   </li>
-                  <li className="list-group-item">
+                  <li className="list-group-item ">
                     Launch Successful:{' '}
                     <span
                       className={classNames({
@@ -64,16 +64,16 @@ export class Launch extends Component {
 
                 <h4 className="my-3"><span className="text-light">Rocket Details</span></h4>
                 <ul className="list-group">
-                  <li className="list-group-item">Rocket ID: {rocket_id}</li>
-                  <li className="list-group-item">
+                  <li className="list-group-item text-dark">Rocket ID: {rocket_id}</li>
+                  <li className="list-group-item text-dark">
                     Rocket Name: {rocket_name}
                   </li>
-                  <li className="list-group-item">
+                  <li className="list-group-item text-dark">
                     Rocket Type: {rocket_type}
                   </li>
                 </ul>
                 <hr />
-                <Link to="/" className="btn btn-secondary">
+                <Link to="/" className="btn btn-warning">
                   Back
                 </Link>
               </div>
