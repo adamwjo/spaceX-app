@@ -40,9 +40,10 @@ export class Launch extends Component {
 
             return (
               <div>
-                <h1 className="display-4 my-3">
-                  <span className="text-dark">Mission:</span> {mission_name}
-                </h1>
+                <h1 className="display-4 my-3 text-secondary">Mission Name:</h1>
+                <h3 className="display-4 my-3">
+                  <span className="text-light"> {mission_name}</span>
+                </h3>
                 <h4 className="mb-3">Launch Details</h4>
                 <ul className="list-group">
                   <li className="list-group-item">
@@ -61,7 +62,7 @@ export class Launch extends Component {
                   </li>
                 </ul>
 
-                <h4 className="my-3">Rocket Details</h4>
+                <h4 className="my-3"><span className="text-light">Rocket Details</span></h4>
                 <ul className="list-group">
                   <li className="list-group-item">Rocket ID: {rocket_id}</li>
                   <li className="list-group-item">
