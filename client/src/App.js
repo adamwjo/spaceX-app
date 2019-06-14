@@ -14,7 +14,6 @@ const client = new ApolloClient({
   uri: 'http://localhost:5000/graphql'
 });
 
-//some shit
 
 function App() {
  
